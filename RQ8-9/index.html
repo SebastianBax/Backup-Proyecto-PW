@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juegos Mejor Valorados</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<h1>🎮 Juegos Mejor Valorados</h1>
+
+<ul id="game-list">
+  <li onclick="showGame('elden')">Elden Ring</li>
+  <li onclick="showGame('gow')">God of War (2018)</li>
+</ul>
+
+<div class="details" id="game-detail">
+  <h2 id="game-title"></h2>
+  <p id="game-description"></p>
+  <div class="stars" id="game-stars"></div>
+  <div class="screenshots" id="game-images"></div>
+  <div id="game-trailer"></div>
+  <h3>Reseñas:</h3>
+  <ul id="game-reviews"></ul>
+</div>
+
+<script src="juegos.js"></script>
+</body>
+</html>
