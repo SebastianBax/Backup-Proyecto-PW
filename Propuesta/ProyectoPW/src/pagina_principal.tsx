@@ -1,4 +1,4 @@
-// Puedes llamarlo PaginaPrincipal.tsx
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function PaginaPrincipal() {
@@ -157,7 +157,7 @@ export default function PaginaPrincipal() {
         </div>
       </div>
 
-      {/* Estilos personalizados */}
+      {/* Estilos */}
       <style>{`
         body {
           background-color: #1a1a1d;
