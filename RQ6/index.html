@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Catálogo de Juegos</title>
+  <script src="CatalogoFiltrar.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 <body class="bg-light">
@@ -11,6 +12,7 @@
   <div class="container py-4">
     <h1 class="text-center mb-4">Catálogo de Juegos</h1>
 
+    <!-- Filtros -->
     <div class="card mb-4 p-3 shadow-sm">
       <div class="row g-3 align-items-end">
         <div class="col-md-2">
@@ -29,6 +31,8 @@
             <option value="aventura">Aventura</option>
             <option value="rpg">RPG</option>
             <option value="estrategia">Estrategia</option>
+            <option value="simulacion">Simulación</option>
+            <option value="deportes">Deportes</option>
           </select>
         </div>
         <div class="col-md-2">
@@ -52,38 +56,176 @@
       </div>
     </div>
 
-    <div class="d-flex overflow-auto gap-3 flex-nowrap pb-3" id="listaJuegos">
-      <div class="card juego accion flex-shrink-0" style="min-width: 250px;" data-precio="59.99" data-plataforma="ps5" data-oferta="false">
-        <div class="card-body">
-          <h5 class="card-title">Juego 1</h5>
-          <p class="card-text">Categoría: Acción</p>
-          <p class="card-text">Plataforma: PS5</p>
-          <p class="card-text">Precio: $59.99</p>
-        </div>
+    <!-- Lista de Juegos -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3" id="listaJuegos">
+  <div class="col">
+    <div class="card juego accion" data-precio="59.99" data-plataforma="ps5" data-oferta="false">
+      <div class="card-body">
+        <h5 class="card-title">Juego 1</h5>
+        <p class="card-text">Categoría: Acción</p>
+        <p class="card-text">Plataforma: PS5</p>
+        <p class="card-text">Precio: $59.99</p>
       </div>
-
-      <div class="card juego aventura flex-shrink-0 border-success" style="min-width: 250px;" data-precio="12.93" data-plataforma="windows" data-oferta="true">
-        <div class="card-body">
-          <h5 class="card-title">Juego 2</h5>
-          <p class="card-text">Categoría: Aventura</p>
-          <p class="card-text">Plataforma: Windows</p>
-          <p class="card-text">Precio: $12.93 <span class="badge bg-success">Oferta</span></p>
-        </div>
-      </div>
-
-      <div class="card juego rpg flex-shrink-0" style="min-width: 250px;" data-precio="29.99" data-plataforma="windows" data-oferta="false">
-        <div class="card-body">
-          <h5 class="card-title">Juego 3</h5>
-          <p class="card-text">Categoría: RPG</p>
-          <p class="card-text">Plataforma: Windows</p>
-          <p class="card-text">Precio: $29.99</p>
-        </div>
-      </div>
-
-      <!-- Agrega el resto de los juegos usando el mismo patrón -->
     </div>
   </div>
 
-  <script src="catalogo.js"></script>
+  <div class="col">
+    <div class="card juego aventura border-success" data-precio="12.93" data-plataforma="windows" data-oferta="true">
+      <div class="card-body">
+        <h5 class="card-title">Juego 2</h5>
+        <p class="card-text">Categoría: Aventura</p>
+        <p class="card-text">Plataforma: Windows</p>
+        <p class="card-text">Precio: $12.93 <span class="badge bg-success">Oferta</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card juego rpg" data-precio="29.99" data-plataforma="windows" data-oferta="false">
+      <div class="card-body">
+        <h5 class="card-title">Juego 3</h5>
+        <p class="card-text">Categoría: RPG</p>
+        <p class="card-text">Plataforma: Windows</p>
+        <p class="card-text">Precio: $29.99</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card juego estrategia" data-precio="45.00" data-plataforma="macos" data-oferta="false">
+      <div class="card-body">
+        <h5 class="card-title">Juego 4</h5>
+        <p class="card-text">Categoría: Estrategia</p>
+        <p class="card-text">Plataforma: macOS</p>
+        <p class="card-text">Precio: $45.00</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card juego simulacion" data-precio="22.00" data-plataforma="switch" data-oferta="false">
+      <div class="card-body">
+        <h5 class="card-title">Juego 5</h5>
+        <p class="card-text">Categoría: Simulación</p>
+        <p class="card-text">Plataforma: Switch</p>
+        <p class="card-text">Precio: $22.00</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card juego deportes" data-precio="39.90" data-plataforma="ps4" data-oferta="false">
+      <div class="card-body">
+        <h5 class="card-title">Juego 6</h5>
+        <p class="card-text">Categoría: Deportes</p>
+        <p class="card-text">Plataforma: PS4</p>
+        <p class="card-text">Precio: $39.90</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card juego puzzle border-success" data-precio="9.99" data-plataforma="windows" data-oferta="true">
+      <div class="card-body">
+        <h5 class="card-title">Juego 7</h5>
+        <p class="card-text">Categoría: Estrategia</p>
+        <p class="card-text">Plataforma: Windows</p>
+        <p class="card-text">Precio: $9.99 <span class="badge bg-success">Oferta</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card juego aventura" data-precio="64.00" data-plataforma="macos" data-oferta="false">
+      <div class="card-body">
+        <h5 class="card-title">Juego 8</h5>
+        <p class="card-text">Categoría: Aventura</p>
+        <p class="card-text">Plataforma: macOS</p>
+        <p class="card-text">Precio: $64.00</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card juego terror" data-precio="52.00" data-plataforma="ps5" data-oferta="false">
+      <div class="card-body">
+        <h5 class="card-title">Juego 9</h5>
+        <p class="card-text">Categoría: Acción</p>
+        <p class="card-text">Plataforma: PS5</p>
+        <p class="card-text">Precio: $52.00</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card juego rpg" data-precio="33.00" data-plataforma="switch" data-oferta="false">
+      <div class="card-body">
+        <h5 class="card-title">Juego 10</h5>
+        <p class="card-text">Categoría: RPG</p>
+        <p class="card-text">Plataforma: Switch</p>
+        <p class="card-text">Precio: $33.00</p>
+
+        
+
+      </div>
+    </div>
+  </div>
+  <div class="col">
+  <div class="card juego carreras" data-precio="19.99" data-plataforma="ps4" data-oferta="false">
+    <div class="card-body">
+      <h5 class="card-title">Juego 11</h5>
+      <p class="card-text">Categoría: RPG</p>
+      <p class="card-text">Plataforma: PS4</p>
+      <p class="card-text">Precio: $19.99</p>
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card juego multijugador border-success" data-precio="8.49" data-plataforma="windows" data-oferta="true">
+    <div class="card-body">
+      <h5 class="card-title">Juego 12</h5>
+      <p class="card-text">Categoría: Acción</p>
+      <p class="card-text">Plataforma: Windows</p>
+      <p class="card-text">Precio: $8.49 <span class="badge bg-success">Oferta</span></p>
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card juego indie" data-precio="14.99" data-plataforma="switch" data-oferta="false">
+    <div class="card-body">
+      <h5 class="card-title">Juego 13</h5>
+      <p class="card-text">Categoría: Deportes</p>
+      <p class="card-text">Plataforma: Switch</p>
+      <p class="card-text">Precio: $14.99</p>
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card juego misterio" data-precio="23.00" data-plataforma="macos" data-oferta="false">
+    <div class="card-body">
+      <h5 class="card-title">Juego 14</h5>
+      <p class="card-text">Categoría: Aventura</p>
+      <p class="card-text">Plataforma: macOS</p>
+      <p class="card-text">Precio: $23.00</p>
+    </div>
+  </div>
+</div>
+
+<div class="col">
+  <div class="card juego educativo" data-precio="11.50" data-plataforma="windows" data-oferta="false">
+    <div class="card-body">
+      <h5 class="card-title">Juego 15</h5>
+      <p class="card-text">Categoría: Aventura</p>
+      <p class="card-text">Plataforma: Windows</p>
+      <p class="card-text">Precio: $11.50</p>
+    </div>
+  </div>
+</div>
+</div>
+
+
 </body>
 </html>
