@@ -1,5 +1,6 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 
 export default function PaginaPrincipal() {
   return (
@@ -13,11 +14,11 @@ export default function PaginaPrincipal() {
           </button>
           <div className="collapse navbar-collapse" id="navbarContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item"><a className="nav-link" href="#">Explore</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Categories</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Home</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Platform</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Special Offers</a></li>
+              <li className="nav-item"><Link className="nav-link" to="/explore">Explore</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/categories">Categories</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/platform">Platform</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/offers">Special Offers</Link></li>
             </ul>
             <button className="btn btn-outline-light me-2"><i className="bi bi-person-circle"></i></button>
             <button className="btn btn-outline-light"><i className="bi bi-search"></i></button>
