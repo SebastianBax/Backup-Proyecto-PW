@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import '../paginas/style.css';
 
 export default function GameDetail() {
   const { id } = useParams<{ id: string }>();

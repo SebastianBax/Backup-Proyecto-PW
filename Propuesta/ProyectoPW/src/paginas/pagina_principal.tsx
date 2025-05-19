@@ -2,6 +2,10 @@ import React from 'react';
 import Navbar from '../componentes/Navbar';
 import CardJuego from '../componentes/CardJuego';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../paginas/style.css';
+
 const juegosDestacados = [
   { nombre: 'Minecraft', imagen: '/Minecraft-Logo.png' },
   { nombre: 'Rimworld', imagen: '/Rimworld_Logo.png' },
@@ -11,7 +15,7 @@ const juegosDestacados = [
 
 export default function PaginaPrincipal() {
   return (
-    <>
+    <div className="fondo-oscuro">
       <Navbar />
 
       {/* Carrusel - creo que lo podemos hacer un componente aparte */}
@@ -50,27 +54,6 @@ export default function PaginaPrincipal() {
         </div>
       </div>
 
-     
-      <style>{`
-        body {
-          background-color: #1a1a1d;
-          color: white;
-        }
-        .bg-dark-2 {
-          background-color: #2d2d30;
-        }
-        .btn-acento {
-          background-color: hsl(259, 90%, 50%);
-          color: white;
-          border: none;
-        }
-        .btn-acento:hover {
-          background-color: hsl(259, 90%, 40%);
-        }
-        .texto-acento {
-          color: #00c9ff;
-        }
-      `}</style>
-    </>
+    </div>
   );
 }

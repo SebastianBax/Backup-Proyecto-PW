@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from '../componentes/Navbar';
 import CardJuego from '../componentes/CardJuego';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../paginas/style.css';
+
 
 const juegosMock = [
   { id: 1, nombre: 'Minecraft', imagen: '/Minecraft-Logo.png', precio: 20, oferta: false },
