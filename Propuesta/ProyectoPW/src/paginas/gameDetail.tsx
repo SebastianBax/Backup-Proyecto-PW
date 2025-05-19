@@ -10,7 +10,7 @@ export default function GameDetail() {
     nombre: 'Minecraft',
     descripcion: 'Juego de construcción y supervivencia...',
     imagen: '/Minecraft-Logo.png',
-    trailer: 'https://www.youtube.com/',
+    trailer: "https://www.youtube.com/embed/MmB9b5njVbA",
   };
 
   return (

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../componentes/Navbar';
 import CardJuego from '../componentes/CardJuego';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../paginas/style.css';
@@ -15,6 +16,7 @@ const juegosMock = [
 
 export default function Explore() {
   const [filtroOferta, setFiltroOferta] = useState(false);
+  const navigate = useNavigate();
 
   const juegosFiltrados = filtroOferta
     ? juegosMock.filter((j) => j.oferta)
@@ -49,7 +51,7 @@ export default function Explore() {
                 nombre={juego.nombre}
                 imagen={juego.imagen}
                 precio={juego.precio}
-                onDetalles={() => alert(`Ver detalles de ${juego.nombre}`)}
+                onDetalles={() => navigate(`/game/${juego.id}`)}
               />
             </div>
           ))}

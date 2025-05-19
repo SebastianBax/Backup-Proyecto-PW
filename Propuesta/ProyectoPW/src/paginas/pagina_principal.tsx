@@ -1,19 +1,21 @@
 import React from 'react';
 import Navbar from '../componentes/Navbar';
 import CardJuego from '../componentes/CardJuego';
+import { useNavigate } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../paginas/style.css';
 
 const juegosDestacados = [
-  { nombre: 'Minecraft', imagen: '/Minecraft-Logo.png' },
-  { nombre: 'Rimworld', imagen: '/Rimworld_Logo.png' },
-  { nombre: 'God of War', imagen: '/GodofWar_Logo.jpg' },
+  { id:1, nombre: 'Minecraft', imagen: '/Minecraft-Logo.png' },
+  { id:2, nombre: 'Rimworld', imagen: '/Rimworld_Logo.png' },
+  { id:3, nombre: 'God of War', imagen: '/GodofWar_Logo.jpg' },
   // Agrega más juegos
 ];
 
 export default function PaginaPrincipal() {
+   const navigate = useNavigate();
   return (
     <div className="fondo-oscuro">
       <Navbar />
@@ -48,7 +50,10 @@ export default function PaginaPrincipal() {
         <div className="row row-cols-1 row-cols-md-5 g-4 mt-3">
           {juegosDestacados.map((juego, idx) => (
             <div className="col" key={idx}>
-              <CardJuego nombre={juego.nombre} imagen={juego.imagen} />
+              <CardJuego 
+                nombre={juego.nombre} 
+                imagen={juego.imagen}
+                onDetalles={() => navigate(`/game/${juego.id}`)} />
             </div>
           ))}
         </div>
