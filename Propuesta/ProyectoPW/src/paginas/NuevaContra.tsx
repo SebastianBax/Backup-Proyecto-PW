@@ -27,35 +27,17 @@ const NuevaContra: React.FC = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-3 text-start">
             <label htmlFor="code" className="form-label">Código:</label>
-            <input
-              type="text"
-              className="form-control rounded-pill"
-              id="code"
-              name="code"
-              required
-            />
+            <input type="text" className="form-control rounded-pill" id="code" name="code" required/>
           </div>
 
           <div className="mb-3 text-start">
             <label htmlFor="newPassword" className="form-label">Nueva contraseña:</label>
-            <input
-              type="password"
-              className="form-control rounded-pill"
-              id="newPassword"
-              name="newPassword"
-              required
-            />
+            <input type="password" className="form-control rounded-pill" id="newPassword" name="newPassword" required />
           </div>
 
           <div className="mb-4 text-start">
             <label htmlFor="confirmPassword" className="form-label">Confirme su nueva contraseña:</label>
-            <input
-              type="password"
-              className="form-control rounded-pill"
-              id="confirmPassword"
-              name="confirmPassword"
-              required
-            />
+            <input type="password" className="form-control rounded-pill" id="confirmPassword" name="confirmPassword" required />
           </div>
 
           <div className="d-grid">
