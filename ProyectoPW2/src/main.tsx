@@ -14,11 +14,13 @@ import Catalogo from './paginas/pagina_principal';
 import Configuracion from './paginas/configuracion.tsx';
 import MayorVal from './paginas/mayorvalor.tsx';
 import Masvendi from './paginas/masvendi.tsx';
-import Adminpag from './paginas/Adminpag.tsx';
-
+import Adminpag from './paginas/adminpag.tsx';
+import Categories from './paginas/categories';
+import Platforms from './paginas/plataformas.tsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 
 createRoot(document.getElementById('root')!).render(
@@ -38,6 +40,9 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/mayorval" element={<MayorVal />} />
         <Route path="/masvendi" element={<Masvendi />} />  
         <Route path="/adminpag" element={<Adminpag />} /> 
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/plataformas" element={<Platforms />} />
+
       </Routes>
     </BrowserRouter>
   </StrictMode>
