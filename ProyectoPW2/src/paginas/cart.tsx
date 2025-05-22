@@ -4,6 +4,8 @@ import '../paginas/style.css';
 
 import React, { useState } from 'react';
 import Navbar from '../componentes/Navbar';
+import { useCarrito } from '../context/CarritoContext';
+import { useNavigate } from 'react-router-dom';
 
 interface JuegoCarrito {
   id: number;
@@ -31,29 +33,9 @@ const carritoInicial: JuegoCarrito[] = [
 ];
 
 export default function Cart() {
-  const [carrito, setCarrito] = useState<JuegoCarrito[]>(carritoInicial);
+ const { carrito, aumentarCantidad, disminuirCantidad, eliminarJuego } = useCarrito();
+ const navigate = useNavigate();
 
-  const aumentarCantidad = (id: number) => {
-    setCarrito((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, cantidad: item.cantidad + 1 } : item
-      )
-    );
-  };
-
-  const disminuirCantidad = (id: number) => {
-    setCarrito((prev) =>
-      prev.map((item) =>
-        item.id === id && item.cantidad > 1
-          ? { ...item, cantidad: item.cantidad - 1 }
-          : item
-      )
-    );
-  };
-
-  const eliminarJuego = (id: number) => {
-    setCarrito((prev) => prev.filter((item) => item.id !== id));
-  };
 
   const totalPagar = carrito.reduce(
     (acc, item) => acc + item.precio * item.cantidad,
@@ -129,7 +111,7 @@ export default function Cart() {
               <hr className="border-light" />
               <p>Total a pagar:</p>
               <h4>${totalPagar}</h4>
-              <button className="btn btn-acento w-100 mt-3">Finalizar Compra</button>
+              <button className="btn btn-acento w-100 mt-3" onClick={() => navigate('/pago')}> Finalizar Compra </button>
             </div>
           </div>
         )}
