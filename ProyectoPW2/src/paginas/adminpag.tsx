@@ -1,11 +1,6 @@
 import React from 'react';
 import AgregarDescuento from '../componentes/Agregardescuento';
-<<<<<<< HEAD
-import AgregarJuego from '../componentes/Agregarjuego';
-
-=======
 import { useNavigate } from 'react-router-dom';
->>>>>>> 6e1c03ebf47fc5ef42ef6b2140fd5bafb6504803
 
 const AdminPage = () => {
   const navigate = useNavigate();
@@ -15,12 +10,7 @@ const AdminPage = () => {
       <h1 className="mb-4">Configuración de la página</h1>
 
       <section className="mb-5">
-<<<<<<< HEAD
-        <h3> Agregar Juego</h3>
-        <AgregarJuego />
-=======
         <h3>Agregar Juego</h3>
->>>>>>> 6e1c03ebf47fc5ef42ef6b2140fd5bafb6504803
       </section>
 
       <section className="mb-5">
