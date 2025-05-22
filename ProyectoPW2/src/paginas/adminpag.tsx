@@ -1,5 +1,6 @@
 import React from 'react';
 import AgregarDescuento from '../componentes/Agregardescuento';
+import AgregarJuego from '../componentes/Agregarjuego';
 
 
 const AdminPage = () => {
@@ -9,6 +10,7 @@ const AdminPage = () => {
 
       <section className="mb-5">
         <h3> Agregar Juego</h3>
+        <AgregarJuego />
       </section>
 
       <section className="mb-5">

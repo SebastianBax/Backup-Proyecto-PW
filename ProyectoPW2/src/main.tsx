@@ -9,17 +9,21 @@ import Cart from './paginas/cart.tsx';
 import Login from './paginas/login';
 import Registro from './paginas/Registro';
 import EnviarCodigo from './paginas/EnviarCodigo';
-import NuevaContra from './paginas/NuevaContra';
+import NuevaContra from './paginas/NuevaContra';  
 import Catalogo from './paginas/pagina_principal';
 import MejorValorados from "./paginas/mejorValorados";
 import DetalleJuego from "./paginas/detalleJuego";
-import { CarritoProvider } from './context/CarritoContext.tsx';
 import AdminNoticias from './paginas/AdminNoticias';
+import Categories from './paginas/categories';
+import Plataformas from './paginas/plataformas';
+import AdminPage from './paginas/adminpag';
 
+
+
+import { CarritoProvider } from './context/CarritoContext.tsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -29,7 +33,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/" element={<PaginaPrincipal />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/game/:id" element={<GameDetail />} />
-          <Route path="/cart" element={<Cart/>} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registro />} />
           <Route path="/forgot" element={<EnviarCodigo />} />
@@ -38,6 +42,12 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/mejor-valorados" element={<MejorValorados />} />
           <Route path="/detalle/:id" element={<DetalleJuego />} />
           <Route path="/admin/noticias" element={<AdminNoticias />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/plataformas" element={<Plataformas />} />
+          <Route path="/adminpag" element={<AdminPage />} />
+
+
+
         </Routes>
       </BrowserRouter>
     </CarritoProvider>

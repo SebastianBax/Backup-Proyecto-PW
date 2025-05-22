@@ -11,7 +11,13 @@ const juegosDestacados = [
   { id:1, nombre: 'Minecraft', imagen: '/Minecraft-Logo.png' },
   { id:2, nombre: 'Rimworld', imagen: '/Rimworld_Logo.png' },
   { id:3, nombre: 'God of War', imagen: '/GodofWar_Logo.jpg' },
-  // Agrega más juegos
+  { id:4, nombre: 'Farming Simulator 22', imagen: '/FS22_Logo.avif' },
+  { id:5, nombre: 'Company of Heroes 2', imagen: '/COH2.PNG' },
+  { id:6, nombre: 'Helldivers 2', imagen: '/HD2_Logo.png' },
+  { id:7, nombre: 'Kingdom Come Deliverance 2', imagen: '/KCD2_Logo.png' },
+  { id:8, nombre: 'Outlast', imagen: '/Outlast.avif' },
+  { id:9, nombre: 'Grand Theft Auto V', imagen: '/GTAV_Logo.png' },
+  { id:10, nombre: 'Smash Bros Melee', imagen: '/Smashbros.png' },
 ];
 
 export default function PaginaPrincipal() {
