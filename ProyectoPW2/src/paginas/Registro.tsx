@@ -9,14 +9,14 @@ const Registro: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate('/');
+    navigate('/login');
   };
 
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="card p-4 shadow" style={{ maxWidth: 500, width: '100%', backgroundColor: '#1e1e1e' }}>
         <div className="text-end w-100 mb-3">
-          <button onClick={() => navigate('/')} className="btn btn-sm btn-light rounded-circle">←</button>
+          <button onClick={() => navigate('/login')} className="btn btn-sm btn-light rounded-circle">←</button>
         </div>
         <h2 className="text-center mb-3 fw-bold text-white">Crear cuenta</h2>
         <p className="text-center text-light mb-4">Explora el catálogo de juegos nuevos y fascinantes retros</p>
@@ -50,11 +50,7 @@ const Registro: React.FC = () => {
           </div>
 
           <div className="d-grid">
-            <button
-              type="submit"
-              className="btn rounded-pill fw-bold"
-              style={{ backgroundColor: '#6500ff', color: 'white' }}
-            >
+            <button type="submit"className="btn rounded-pill fw-bold"style={{ backgroundColor: '#6500ff', color: 'white' }}>
               Continuar →
             </button>
           </div>
