@@ -9,6 +9,7 @@ export type JuegoDetalle = {
   trailer: string;
   resenas: string[];
   precio: number;
+  oferta?: boolean;
 };
 
 const juegosData: JuegoDetalle[] = [
@@ -21,6 +22,7 @@ const juegosData: JuegoDetalle[] = [
     trailer: "",
     resenas: [],
     precio: 20,
+    oferta: true,
   },
   {
     id: 2,

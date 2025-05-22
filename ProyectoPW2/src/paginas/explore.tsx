@@ -2,25 +2,16 @@ import React, { useState } from 'react';
 import Navbar from '../componentes/Navbar';
 import CardJuego from '../componentes/CardJuego';
 import { useNavigate } from 'react-router-dom';
+import { useJuegos } from '../context/GameContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../paginas/style.css';
 
-
-const juegosMock = [
-  { id: 1, nombre: 'Minecraft', imagen: '/Minecraft-Logo.png', precio: 20, oferta: false },
-  { id: 2, nombre: 'Rimworld', imagen: '/Rimworld_Logo.png', precio: 15, oferta: true },
-  { id: 3, nombre: 'God of War', imagen: '/GodofWar_Logo.jpg', precio: 25, oferta: false },
-  // juegos aquí
-];
-
 export default function Explore() {
   const [filtroOferta, setFiltroOferta] = useState(false);
   const navigate = useNavigate();
-
-  const juegosFiltrados = filtroOferta
-    ? juegosMock.filter((j) => j.oferta)
-    : juegosMock;
+  const { juegos } = useJuegos();
+  const juegosFiltrados = filtroOferta ? juegos.filter(j => j.oferta) : juegos;
 
   return (
     <>
@@ -48,8 +39,8 @@ export default function Explore() {
           {juegosFiltrados.map((juego) => (
             <div className="col" key={juego.id}>
               <CardJuego
-                nombre={juego.nombre}
-                imagen={juego.imagen}
+                nombre={juego.titulo}
+                imagen={juego.imagenes[0]}
                 precio={juego.precio}
                 onDetalles={() => navigate(`/game/${juego.id}`)}
               />
