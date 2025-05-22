@@ -46,8 +46,6 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/plataformas" element={<Plataformas />} />
           <Route path="/adminpag" element={<AdminPage />} />
           <Route path="/admin/catalogo" element={<AdminCatalogo />} />
-          <Route path="/admin" element={<AdminPage />} />
-          <Route path="/admin/catalogo" element={<AdminCatalogo />} /> 
           <Route path="/pago" element={<Pago />} />
         </Routes>
       </BrowserRouter>

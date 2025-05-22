@@ -2,40 +2,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../paginas/style.css';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '../componentes/Navbar';
 import { useCarrito } from '../context/CarritoContext';
 import { useNavigate } from 'react-router-dom';
 
-interface JuegoCarrito {
-  id: number;
-  nombre: string;
-  imagen: string;
-  precio: number;
-  cantidad: number;
-}
-
-const carritoInicial: JuegoCarrito[] = [
-  {
-    id: 1,
-    nombre: 'Minecraft',
-    imagen: '/Minecraft-Logo.png',
-    precio: 20,
-    cantidad: 1,
-  },
-  {
-    id: 2,
-    nombre: 'Rimworld',
-    imagen: '/Rimworld_Logo.png',
-    precio: 15,
-    cantidad: 2,
-  },
-];
-
 export default function Cart() {
- const { carrito, aumentarCantidad, disminuirCantidad, eliminarJuego } = useCarrito();
- const navigate = useNavigate();
+  const { carrito, aumentarCantidad, disminuirCantidad, eliminarJuego } = useCarrito();
+  const navigate = useNavigate();
 
+  console.log("Carrito actual:", carrito);
 
   const totalPagar = carrito.reduce(
     (acc, item) => acc + item.precio * item.cantidad,
@@ -116,8 +92,6 @@ export default function Cart() {
           </div>
         )}
       </div>
-
-     
     </>
   );
 }

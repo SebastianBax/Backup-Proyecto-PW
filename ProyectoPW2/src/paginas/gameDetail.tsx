@@ -19,14 +19,15 @@ const DetalleJuego: React.FC = () => {
     return <p className="p-4 text-red-500">Juego no encontrado.</p>;
   }
 
-  const handleAgregarCarrito = () => {
-    agregarJuego({
-      id: juego.id,
-      nombre: juego.titulo,
-      imagen: juego.imagenes[0],
-      precio: juego.precio,
-    });
-  };
+ const handleAgregarCarrito = () => {
+  console.log("Agregando al carrito", juego);
+  agregarJuego({
+    id: juego.id,
+    nombre: juego.titulo,
+    imagen: juego.imagenes[0],
+    precio: juego.precio,
+  });
+};
 
   return (
     <>

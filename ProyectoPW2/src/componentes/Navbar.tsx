@@ -47,7 +47,7 @@ export default function Navbar() {
           </button>
 
           {/* Botón carrito */}
-          <button className="btn btn-outline-light me-3" onClick={() => window.location.href = '/cart'}>
+          <button className="btn btn-outline-light me-3" onClick={() => navigate('/cart')}>
             <i className="bi bi-cart"></i>
           </button>
         </div>

@@ -31,17 +31,17 @@ export const CarritoProvider = ({ children }: { children: ReactNode }) => {
   const [carrito, setCarrito] = useState<JuegoCarrito[]>([]);
 
   const agregarJuego = (juego: Omit<JuegoCarrito, 'cantidad'>) => {
-    setCarrito((prev) => {
-      const existe = prev.find((j) => j.id === juego.id);
-      if (existe) {
-        return prev.map((j) =>
-          j.id === juego.id ? { ...j, cantidad: j.cantidad + 1 } : j
-        );
-      } else {
-        return [...prev, { ...juego, cantidad: 1 }];
-      }
-    });
-  };
+  setCarrito((prev) => {
+    const existe = prev.find((j) => j.id === juego.id);
+    if (existe) {
+      return prev.map((j) =>
+        j.id === juego.id ? { ...j, cantidad: j.cantidad + 1 } : j
+      );
+    } else {
+      return [...prev, { ...juego, cantidad: 1 }];
+    }
+  });
+};
 
   const eliminarJuego = (id: number) => {
     setCarrito((prev) => prev.filter((j) => j.id !== id));
