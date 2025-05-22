@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
+  const navigate = useNavigate(); // 1. Inicializa la función de navegación
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -12,7 +14,6 @@ export default function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/explore">Explorar</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/categories">Categorías</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/plataformas">Plataforma</Link></li>
@@ -38,10 +39,15 @@ export default function Navbar() {
           {/* Buscador */}
           <input type="text" className="form-control form-control-sm me-3" placeholder="Buscar juego" style={{ maxWidth: '160px' }} />
 
-          {/* Iconos */}
-          <button className="btn btn-outline-light me-3" onClick={() => navigate('/login')}>
+          {/* Botón perfil */}
+          <button
+            className="btn btn-outline-light me-3"
+            onClick={() => navigate('/login')}
+          >
             <i className="bi bi-person-circle"></i>
-            </button>
+          </button>
+
+          {/* Botón carrito */}
           <button className="btn btn-outline-light me-3" onClick={() => window.location.href = '/cart'}>
             <i className="bi bi-cart"></i>
           </button>
