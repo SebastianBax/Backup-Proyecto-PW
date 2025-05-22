@@ -18,6 +18,7 @@ import Categories from './paginas/categories';
 import Plataformas from './paginas/plataformas';
 import AdminPage from './paginas/adminpag';
 import { CarritoProvider } from './context/CarritoContext.tsx';
+import { GameProvider } from "./context/GameContext";
 import Pago from './paginas/Pago';
 import AdminCatalogo from './componentes/AdmCatalogo';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,6 +26,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <GameProvider>
     <CarritoProvider>
       <BrowserRouter>
         <Routes>
@@ -50,5 +52,6 @@ createRoot(document.getElementById('root')!).render(
         </Routes>
       </BrowserRouter>
     </CarritoProvider>
+    </GameProvider>
   </StrictMode>
 );
