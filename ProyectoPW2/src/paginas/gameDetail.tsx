@@ -24,8 +24,8 @@ const juegos: Record<number, JuegoDetalle> = {
     descripcion: "Un RPG de acción en mundo abierto creado por FromSoftware y George R. R. Martin.",
     estrellas: 5,
     imagenes: [
-      "https://cdn.akamai.steamstatic.com/steam/apps/1245620/ss_9f3810a9025f2fcfc57be38bb9cd64e9e13d7e7d.1920x1080.jpg",
-      "https://images.cgames.de/images/gamestar/279/elden-ring-test_6196079.jpg",
+      "https://static.bandainamcoent.eu/high/elden-ring/elden-ring/00-page-setup/elden-ring-new-header-mobile.jpg",
+      "https://static.bandainamcoent.eu/high/elden-ring/elden-ring/00-page-setup/elden-ring-new-header-mobile.jpg",
     ],
     trailer: "https://www.youtube.com/embed/E3Huy2cdih0",
     resenas: [
@@ -101,7 +101,7 @@ const DetalleJuego: React.FC = () => {
       <p className="text-yellow-500 text-lg mb-4">{"★".repeat(juego.estrellas)}</p>
 
       <h2 className="text-xl font-semibold mb-2">Imágenes</h2>
-      <div className="flex flex-wrap gap-4 mb-4">
+      <div className="d-flex flex-wrap gap-4 justify-content-center mb-4">
         {juego.imagenes.map((img, idx) => (
           <img key={idx} src={img} alt="screenshot" className="w-48 rounded shadow" />
         ))}
