@@ -40,10 +40,7 @@ export default function Navbar() {
           <input type="text" className="form-control form-control-sm me-3" placeholder="Buscar juego" style={{ maxWidth: '160px' }} />
 
           {/* Botón perfil */}
-          <button
-            className="btn btn-outline-light me-3"
-            onClick={() => navigate('/login')}
-          >
+          <button className="btn btn-outline-light me-3" onClick={() => navigate('/login')}>
             <i className="bi bi-person-circle"></i>
           </button>
 
