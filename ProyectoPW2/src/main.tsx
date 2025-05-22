@@ -17,7 +17,7 @@ import Masvendi from './paginas/masvendi.tsx';
 import Adminpag from './paginas/adminpag.tsx';
 import Categories from './paginas/categories';
 import Platforms from './paginas/plataformas.tsx';
-
+import AdminCatalogo from './componentes/AdmCatalogo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
@@ -39,7 +39,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/configuracion" element={<Configuracion />} />
         <Route path="/mayorval" element={<MayorVal />} />
         <Route path="/masvendi" element={<Masvendi />} />  
-        <Route path="/adminpag" element={<Adminpag />} /> 
+        <Route path="/adminpag" element={<Adminpag />} />
+        <Route path="/admin/catalogo" element={<AdminCatalogo />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/platform" element={<Platforms />} />
 
