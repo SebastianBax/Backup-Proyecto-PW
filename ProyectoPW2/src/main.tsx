@@ -17,6 +17,7 @@ import AdminNoticias from './paginas/AdminNoticias';
 import Categories from './paginas/categories';
 import Plataformas from './paginas/plataformas';
 import AdminPage from './paginas/adminpag';
+import SpecialOffers from './paginas/specialOffers';
 import { CarritoProvider } from './context/CarritoContext.tsx';
 import { GameProvider } from "./context/GameContext";
 import Pago from './paginas/Pago';
@@ -48,6 +49,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/adminpag" element={<AdminPage />} />
           <Route path="/admin/catalogo" element={<AdminCatalogo />} />
           <Route path="/pago" element={<Pago />} />
+          <Route path="/offers" element={<SpecialOffers />} />
         </Routes>
       </BrowserRouter>
     </CarritoProvider>
