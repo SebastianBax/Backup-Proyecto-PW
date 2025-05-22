@@ -15,6 +15,7 @@ import MejorValorados from "./paginas/mejorValorados";
 import DetalleJuego from "./paginas/detalleJuego";
 import { CarritoProvider } from './context/CarritoContext.tsx';
 import AdminNoticias from './paginas/AdminNoticias';
+import Pago from './paginas/Pago';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -38,6 +39,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/mejor-valorados" element={<MejorValorados />} />
           <Route path="/detalle/:id" element={<DetalleJuego />} />
           <Route path="/admin/noticias" element={<AdminNoticias />} />
+          <Route path="/pago" element={<Pago />} />
         </Routes>
       </BrowserRouter>
     </CarritoProvider>
