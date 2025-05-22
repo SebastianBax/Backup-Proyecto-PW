@@ -20,7 +20,7 @@ import AdminPage from './paginas/adminpag';
 import { CarritoProvider } from './context/CarritoContext.tsx';
 import { GameProvider } from "./context/GameContext";
 import Pago from './paginas/Pago';
-import AdminCatalogo from './componentes/AdmCatalogo';
+import AdminCatalogo from './paginas/AdmCatalogo.tsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
