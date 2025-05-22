@@ -12,7 +12,7 @@ import EnviarCodigo from './paginas/EnviarCodigo';
 import NuevaContra from './paginas/NuevaContra';  
 
 import MejorValorados from "./paginas/mejorValorados";
-import DetalleJuego from "./paginas/detalleJuego";
+import DetalleJuego from "./paginas/gameDetail.tsx";
 import AdminNoticias from './paginas/AdminNoticias';
 import Categories from './paginas/categories';
 import Plataformas from './paginas/plataformas';
