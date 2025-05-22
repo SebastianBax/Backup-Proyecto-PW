@@ -54,7 +54,7 @@ export default function Cart() {
                       >
                         -
                       </button>
-                      <span>{juego.cantidad}</span>
+                      <span className="text-light">{juego.cantidad}</span>
                       <button
                         className="btn btn-acento btn-sm"
                         onClick={() => aumentarCantidad(juego.id)}
