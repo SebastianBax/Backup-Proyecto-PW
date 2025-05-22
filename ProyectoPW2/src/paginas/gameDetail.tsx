@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useCarrito } from "../context/CarritoContext";
 import "../paginas/style.css";
 import Navbar from "../componentes/Navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 type JuegoDetalle = {
   id: number;
@@ -90,10 +92,10 @@ const DetalleJuego: React.FC = () => {
   };
 
   return (
-    
-    <div className="container mt-4 text-white">
-      <>
+    <>
     <Navbar />
+    <div className="container mt-4 text-white">
+      
       <h1 className="text-3xl font-bold mb-2">{juego.titulo}</h1>
       <p className="mb-4 text-gray-300">{juego.descripcion}</p>
       <p className="text-yellow-500 text-lg mb-4">{"★".repeat(juego.estrellas)}</p>
@@ -128,8 +130,9 @@ const DetalleJuego: React.FC = () => {
           Agregar al carrito
         </button>
       </div>
-      </>
+     
     </div>
+     </>
   );
 };
 
