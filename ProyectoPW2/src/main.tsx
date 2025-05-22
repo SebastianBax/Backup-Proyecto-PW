@@ -17,7 +17,7 @@ import { CarritoProvider } from './context/CarritoContext.tsx';
 import AdminNoticias from './paginas/AdminNoticias';
 import Pago from './paginas/Pago';
 
-
+import AdminCatalogo from './componentes/AdmCatalogo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
