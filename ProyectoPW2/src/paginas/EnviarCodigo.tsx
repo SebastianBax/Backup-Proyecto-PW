@@ -13,25 +13,23 @@ const ForgotPassword: React.FC = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card p-4 shadow" style={{ maxWidth: 400, width: '100%', backgroundColor: '#1e1e1e' }}>
-        <div className="text-end">
-          <button onClick={() => navigate('/')} className="btn btn-sm btn-light rounded-circle">←</button>
-        </div>
+    <div className="bg-secondary text-white d-flex justify-content-center align-items-center vh-100 position-relative">
+      <div className="position-absolute top-0 end-0 p-3">
+        <button onClick={() => navigate('/')} className="btn btn-sm btn-light rounded-circle">←</button>
+      </div>
 
-        <h2 className="fw-bold mb-3 text-white">¿Olvidaste tu contraseña?</h2>
-        <p className="mb-4 text-white">
-          Ingresa tu correo electrónico para enviarte un código de recuperación.
-        </p>
+      <div className="bg-dark bg-opacity-50 p-4 rounded-4 shadow text-center" style={{ maxWidth: '400px', width: '100%' }}>
+        <h2 className="fw-bold mb-3">¿Olvidaste tu contraseña?</h2>
+        <p className="mb-4">Ingresa tu correo electrónico para enviarte un código de recuperación.</p>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-3 text-start">
-            <label htmlFor="email" className="form-label text-light">Correo electrónico o usuario:</label>
+            <label htmlFor="email" className="form-label">Correo electrónico o usuario:</label>
             <input type="email" className="form-control rounded-pill" id="email" name="email" required />
           </div>
 
           <div className="d-grid">
-            <button type="submit" className="btn rounded-pill fw-bold" style={{ backgroundColor: '#6500ff', color: 'white' }}>
+            <button type="submit" className="btn btn-light rounded-pill text-dark fw-bold">
               Enviar correo
             </button>
           </div>
