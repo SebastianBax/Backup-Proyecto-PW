@@ -11,35 +11,17 @@ export default function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item"><Link className="nav-link" to="/pagina_principal">Home</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/explore">Explorar</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/categories">Categorías</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/platform">Plataforma</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/offers">Ofertas especiales</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/mayorval">Best Rating</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/masvendi">Best Sellers</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/configuracion">Configuración</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/adminpag">Admin</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/explore">Explore</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/categories">Categories</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/platform">Platform</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/offers">Special Offers</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/mejor-valorados">Mejores Valorados</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/cart">🛒 Ver Carrito</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/admin/noticias"> Noticias</Link></li>
           </ul>
-
-          {/* Filtro de precio máximo */}
-          <div className="d-flex align-items-center me-3">
-            <label htmlFor="precioMax" className="text-white me-2 mb-0">Precio máx:</label>
-            <input
-              type="number"
-              id="precioMax"
-              className="form-control form-control-sm"
-              placeholder="$100"
-              style={{ width: '100px' }}
-            />
-          </div>
-
-          {/* Buscador y botones */}
-          <input type="text" className="me-3" placeholder="Buscar juego" />
-          <button className="btn btn-outline-light me-3"><i className="bi bi-person-circle"></i></button>
-          <button className="btn btn-outline-light me-3" onClick={() => window.location.href = '/cart'}>
-            <i className="bi bi-cart"></i>
-          </button>
+          <button className="btn btn-outline-light me-2"><i className="bi bi-person-circle"></i></button>
+          <button className="btn btn-outline-light"><i className="bi bi-search"></i></button>
         </div>
       </div>
     </nav>
