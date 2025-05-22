@@ -14,7 +14,7 @@ export default function Navbar() {
             <li className="nav-item"><Link className="nav-link" to="/pagina_principal">Home</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/explore">Explorar</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/categories">Categorías</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/plataformas">Plataforma</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/platform">Plataforma</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/offers">Ofertas especiales</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/mayorval">Best Rating</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/masvendi">Best Sellers</Link></li>

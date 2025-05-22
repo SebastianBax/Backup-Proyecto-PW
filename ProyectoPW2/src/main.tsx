@@ -41,7 +41,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/masvendi" element={<Masvendi />} />  
         <Route path="/adminpag" element={<Adminpag />} /> 
         <Route path="/categories" element={<Categories />} />
-        <Route path="/plataformas" element={<Platforms />} />
+        <Route path="/platform" element={<Platforms />} />
 
       </Routes>
     </BrowserRouter>
