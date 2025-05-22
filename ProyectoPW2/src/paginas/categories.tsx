@@ -23,7 +23,7 @@ const Categories: React.FC = () => {
       <div className="container py-5">
         <h2 className="text-center mb-4 text-white">Categorías de Juegos</h2>
         <div className="row">
-          {categories.map((cat, idx) => (
+          {categories.map((cat, idx) => ( 
             <div className="col-md-4 mb-4 d-flex justify-content-center" key={idx}>
               <button
                 className="btn btn-primary w-100"
