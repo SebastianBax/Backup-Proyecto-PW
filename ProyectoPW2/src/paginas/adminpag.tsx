@@ -1,11 +1,14 @@
 import React from 'react';
 import AgregarDescuento from '../componentes/Agregardescuento';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../componentes/Navbar';
 
 const AdminPage = () => {
   const navigate = useNavigate();
 
   return (
+    <>
+      <Navbar />
     <div className="container my-5">
       <h1 className="mb-4">Configuración de la página</h1>
 
@@ -32,6 +35,7 @@ const AdminPage = () => {
         <h3>Eliminar Juego</h3>
       </section>
     </div>
+    </>
   );
 };
 

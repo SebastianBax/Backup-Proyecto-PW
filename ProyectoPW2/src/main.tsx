@@ -10,7 +10,7 @@ import Login from './paginas/login';
 import Registro from './paginas/Registro';
 import EnviarCodigo from './paginas/EnviarCodigo';
 import NuevaContra from './paginas/NuevaContra';  
-
+import Configuracion from './paginas/configuracion';
 import MejorValorados from "./paginas/mejorValorados";
 import DetalleJuego from "./paginas/gameDetail.tsx";
 import AdminNoticias from './paginas/AdminNoticias';
@@ -44,6 +44,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/admin/noticias" element={<AdminNoticias />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/plataformas" element={<Plataformas />} />
+          <Route path="/configuracion" element={<Configuracion />} />
           <Route path="/adminpag" element={<AdminPage />} />
           <Route path="/admin/catalogo" element={<AdminCatalogo />} />
           <Route path="/pago" element={<Pago />} />

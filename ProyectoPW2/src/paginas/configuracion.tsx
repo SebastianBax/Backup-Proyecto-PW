@@ -4,7 +4,7 @@ import '../paginas/style.css';
 const configuracion = () => {
 
 
-return  <div className="container mt-5">
+return<div className="container mt-5">
       <h1>Account Settings</h1>
       <form>
         <div className="col-md-3">

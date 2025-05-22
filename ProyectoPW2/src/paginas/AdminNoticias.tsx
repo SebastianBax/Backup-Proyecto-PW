@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { Noticia } from '../types/Noticia';
+import Navbar from '../componentes/Navbar';
 
 
 export default function AdminNoticias() {
@@ -40,56 +41,59 @@ export default function AdminNoticias() {
   };
 
   return (
-    <div className="container mt-5 text-white">
-      <h2>Administrar Noticias</h2>
+    <>
+      <Navbar />
+      <div className="container mt-5 text-white">
+        <h2>Administrar Noticias</h2>
 
-      <div className="mb-3">
-        <input
-          type="text"
-          placeholder="Título"
-          className="form-control mb-2"
-          value={titulo}
-          onChange={(e) => setTitulo(e.target.value)}
-        />
-        <textarea
-          placeholder="Contenido"
-          className="form-control mb-2"
-          rows={4}
-          value={contenido}
-          onChange={(e) => setContenido(e.target.value)}
-        />
-        {modoEdicion ? (
-          <button className="btn btn-warning" onClick={guardarEdicion}>
-            Guardar Cambios
-          </button>
-        ) : (
-          <button className="btn btn-success" onClick={agregarNoticia}>
-            Agregar Noticia
-          </button>
-        )}
+        <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Título"
+            className="form-control mb-2"
+            value={titulo}
+            onChange={(e) => setTitulo(e.target.value)}
+          />
+          <textarea
+            placeholder="Contenido"
+            className="form-control mb-2"
+            rows={4}
+            value={contenido}
+            onChange={(e) => setContenido(e.target.value)}
+          />
+          {modoEdicion ? (
+            <button className="btn btn-warning" onClick={guardarEdicion}>
+              Guardar Cambios
+            </button>
+          ) : (
+            <button className="btn btn-success" onClick={agregarNoticia}>
+              Agregar Noticia
+            </button>
+          )}
+        </div>
+
+        <hr />
+
+        <ul className="list-group">
+          {noticias.map((n) => (
+            <li key={n.id} className="list-group-item bg-dark text-white d-flex justify-content-between align-items-center">
+              <div>
+                <h5>{n.titulo}</h5>
+                <p>{n.contenido}</p>
+                <small>{n.fecha}</small>
+              </div>
+              <div>
+                <button className="btn btn-sm btn-primary me-2" onClick={() => comenzarEdicion(n)}>
+                  Editar
+                </button>
+                <button className="btn btn-sm btn-danger" onClick={() => eliminarNoticia(n.id)}>
+                  Eliminar
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
-
-      <hr />
-
-      <ul className="list-group">
-        {noticias.map((n) => (
-          <li key={n.id} className="list-group-item bg-dark text-white d-flex justify-content-between align-items-center">
-            <div>
-              <h5>{n.titulo}</h5>
-              <p>{n.contenido}</p>
-              <small>{n.fecha}</small>
-            </div>
-            <div>
-              <button className="btn btn-sm btn-primary me-2" onClick={() => comenzarEdicion(n)}>
-                Editar
-              </button>
-              <button className="btn btn-sm btn-danger" onClick={() => eliminarNoticia(n.id)}>
-                Eliminar
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+    </>
   );
 }
