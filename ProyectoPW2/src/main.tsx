@@ -10,24 +10,16 @@ import Login from './paginas/login';
 import Registro from './paginas/Registro';
 import EnviarCodigo from './paginas/EnviarCodigo';
 import NuevaContra from './paginas/NuevaContra';  
-import Catalogo from './paginas/pagina_principal';
+
 import MejorValorados from "./paginas/mejorValorados";
 import DetalleJuego from "./paginas/detalleJuego";
 import AdminNoticias from './paginas/AdminNoticias';
-<<<<<<< HEAD
 import Categories from './paginas/categories';
 import Plataformas from './paginas/plataformas';
 import AdminPage from './paginas/adminpag';
-
-
-
 import { CarritoProvider } from './context/CarritoContext.tsx';
-
-=======
 import Pago from './paginas/Pago';
-
 import AdminCatalogo from './componentes/AdmCatalogo';
->>>>>>> 6e1c03ebf47fc5ef42ef6b2140fd5bafb6504803
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
@@ -44,20 +36,14 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/register" element={<Registro />} />
           <Route path="/forgot" element={<EnviarCodigo />} />
           <Route path="/resetPassword" element={<NuevaContra />} />
-          <Route path="/catalog" element={<Catalogo />} />  
+          <Route path="/catalog" element={<Explore />} />  
           <Route path="/mejor-valorados" element={<MejorValorados />} />
           <Route path="/detalle/:id" element={<DetalleJuego />} />
           <Route path="/admin/noticias" element={<AdminNoticias />} />
-<<<<<<< HEAD
           <Route path="/categories" element={<Categories />} />
           <Route path="/plataformas" element={<Plataformas />} />
           <Route path="/adminpag" element={<AdminPage />} />
-
-
-
-=======
           <Route path="/pago" element={<Pago />} />
->>>>>>> 6e1c03ebf47fc5ef42ef6b2140fd5bafb6504803
         </Routes>
       </BrowserRouter>
     </CarritoProvider>
