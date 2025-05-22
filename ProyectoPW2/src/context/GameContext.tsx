@@ -1,4 +1,9 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
+
+export type Reseña = {
+  texto: string;
+  estrellas: number;
+};
 
 export type JuegoDetalle = {
   id: number;
@@ -7,12 +12,16 @@ export type JuegoDetalle = {
   estrellas: number;
   imagenes: string[];
   trailer: string;
-  resenas: string[];
+  resenas: Reseña[];
   precio: number;
   oferta?: boolean;
 };
 
-const juegosData: JuegoDetalle[] = [
+type GameContextType = {
+  juegos: JuegoDetalle[];
+  agregarResena: (id: number, resena: Reseña) => void;
+};
+const juegosDataInicial: JuegoDetalle[] = [
   {
     id: 1,
     titulo: "Minecraft",
@@ -116,12 +125,31 @@ const juegosData: JuegoDetalle[] = [
   },
 ];
 
-const GameContext = createContext<{ juegos: JuegoDetalle[] }>({ juegos: [] });
+const GameContext = createContext<GameContextType>({ juegos: [], agregarResena: () => {} });
 
 export const useJuegos = () => useContext(GameContext);
 
-export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <GameContext.Provider value={{ juegos: juegosData }}>
-    {children}
-  </GameContext.Provider>
-);
+export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [juegos, setJuegos] = useState<JuegoDetalle[]>(juegosDataInicial);
+
+  const agregarResena = (id: number, resena: Reseña) => {
+    setJuegos((prev) =>
+      prev.map((juego) => {
+        if (juego.id === id) {
+          const nuevasResenas = [...juego.resenas, resena];
+          // Calcular nuevo promedio de estrellas
+          const sumaEstrellas = nuevasResenas.reduce((acc, r) => acc + r.estrellas, 0);
+          const promedio = Math.round(sumaEstrellas / nuevasResenas.length);
+          return { ...juego, resenas: nuevasResenas, estrellas: promedio };
+        }
+        return juego;
+      })
+    );
+  };
+
+  return (
+    <GameContext.Provider value={{ juegos, agregarResena }}>
+      {children}
+    </GameContext.Provider>
+  );
+};

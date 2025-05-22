@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCarrito } from "../context/CarritoContext";
 import { useJuegos } from "../context/GameContext";
@@ -9,25 +9,36 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const DetalleJuego: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { juegos } = useJuegos();
+  const { juegos, agregarResena } = useJuegos();
   const { agregarJuego } = useCarrito();
 
   const juegoId = Number(id);
   const juego = juegos.find(j => j.id === juegoId);
 
+  // Estado para nueva reseña
+  const [textoResena, setTextoResena] = useState("");
+  const [estrellasResena, setEstrellasResena] = useState(5);
+
   if (!juego) {
     return <p className="p-4 text-red-500">Juego no encontrado.</p>;
   }
 
- const handleAgregarCarrito = () => {
-  console.log("Agregando al carrito", juego);
-  agregarJuego({
-    id: juego.id,
-    nombre: juego.titulo,
-    imagen: juego.imagenes[0],
-    precio: juego.precio,
-  });
-};
+  const handleAgregarCarrito = () => {
+    agregarJuego({
+      id: juego.id,
+      nombre: juego.titulo,
+      imagen: juego.imagenes[0],
+      precio: juego.precio,
+    });
+  };
+
+  const handleAgregarResena = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (textoResena.trim() === "") return;
+    agregarResena(juego.id, { texto: textoResena, estrellas: estrellasResena });
+    setTextoResena("");
+    setEstrellasResena(5);
+  };
 
   return (
     <>
@@ -54,12 +65,49 @@ const DetalleJuego: React.FC = () => {
           ></iframe>
         </div>
 
+        {/* Área de reseñas */}
         <h2 className="text-xl font-semibold mb-2">Reseñas</h2>
         <ul className="list-disc list-inside text-gray-300 mb-4">
+          {juego.resenas.length === 0 && <li>No hay reseñas aún.</li>}
           {juego.resenas.map((resena, idx) => (
-            <li key={idx}>{resena}</li>
+            <li key={idx}>
+              <span className="text-warning">{"★".repeat(resena.estrellas)}</span>
+              <span className="ms-2">{resena.texto}</span>
+            </li>
           ))}
         </ul>
+
+        {/* Formulario para agregar reseña */}
+        <form className="mb-4" onSubmit={handleAgregarResena}>
+          <div className="mb-2">
+            <label className="form-label me-2">Tu reseña:</label>
+            <input
+              type="text"
+              className="form-control d-inline-block"
+              style={{ width: "300px" }}
+              value={textoResena}
+              onChange={e => setTextoResena(e.target.value)}
+              maxLength={100}
+              required
+            />
+          </div>
+          <div className="mb-2">
+            <label className="form-label me-2">Calificación:</label>
+            <select
+              className="form-select d-inline-block"
+              style={{ width: "100px" }}
+              value={estrellasResena}
+              onChange={e => setEstrellasResena(Number(e.target.value))}
+            >
+              {[5, 4, 3, 2, 1].map(n => (
+                <option key={n} value={n}>{n} ★</option>
+              ))}
+            </select>
+          </div>
+          <button className="btn btn-acento btn-sm" type="submit">
+            Agregar reseña
+          </button>
+        </form>
 
         <div className="d-flex align-items-center gap-3 mb-4">
           <span className="fw-bold fs-4">${juego.precio}</span>
