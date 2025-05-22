@@ -25,18 +25,6 @@ export default function Navbar() {
             <li className="nav-item"><Link className="nav-link" to="/adminpag">Admin</Link></li>
           </ul>
 
-          {/* Filtro de precio máximo */}
-          <div className="d-flex align-items-center me-3">
-            <label htmlFor="precioMax" className="text-white me-2 mb-0">Precio máx:</label>
-            <input
-              type="number"
-              id="precioMax"
-              className="form-control form-control-sm"
-              placeholder="$100"
-              style={{ width: '100px' }}
-            />
-          </div>
-
           {/* Buscador */}
           <input type="text" className="form-control form-control-sm me-3" placeholder="Buscar juego" style={{ maxWidth: '160px' }} />
 
