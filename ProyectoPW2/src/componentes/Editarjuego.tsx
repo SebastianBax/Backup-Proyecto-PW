@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Agregarjuego = () => {
+const EditarJuego = () => {
   return (
     <div className="container mt-5">
-      <h3 className="mb-4">Agregar Juego</h3>
+      <h3 className="mb-4">Editar Juego</h3>
       <form className="row g-3">
 
         <div className="col-md-6">
@@ -12,12 +12,17 @@ const Agregarjuego = () => {
         </div>
 
         <div className="col-md-3">
+          <label className="form-label">ID</label>
+          <input type="text" className="form-control form-control-sm" placeholder="12345" />
+        </div>
+
+        <div className="col-md-3">
           <label className="form-label">Estrellas</label>
           <input type="number" className="form-control form-control-sm" placeholder="5" />
         </div>
 
         <div className="col-md-6">
-          <label className="form-label">URL Imagen</label>
+          <label className="form-label">Imagen</label>
           <input type="text" className="form-control form-control-sm" placeholder="URL de la imagen" />
         </div>
 
@@ -33,16 +38,16 @@ const Agregarjuego = () => {
 
         <div className="col-md-12">
           <label className="form-label">Descripción</label>
-          <textarea className="form-control form-control-sm" placeholder="Texto"></textarea>
+          <textarea className="form-control form-control-sm" placeholder="texto"></textarea>
         </div>
 
         <div className="col-auto">
-          <button className="btn btn-success btn-sm">Añadir</button>
+          <button className="btn btn-primary btn-sm">Guardar Cambios</button>
         </div>
 
       </form>
     </div>
-  );
+    );
 };
 
-export default Agregarjuego;
+export default EditarJuego;

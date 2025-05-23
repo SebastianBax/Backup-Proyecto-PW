@@ -40,4 +40,4 @@ const AgregarDescuento = () => {
   );
 };
 
-export default AgregarDescuento;
+export default AgregarDescuento
