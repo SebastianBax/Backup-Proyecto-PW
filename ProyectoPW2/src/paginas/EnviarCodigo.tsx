@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -6,10 +6,14 @@ import '../paginas/style.css';
 
 const ForgotPassword: React.FC = () => {
   const navigate = useNavigate();
+  const [mensaje, setMensaje] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate('/resetPassword');
+    setMensaje('¡Código enviado!');
+    setTimeout(() => {
+      navigate('/resetPassword');
+    }, 1500);
   };
 
   return (
@@ -23,6 +27,12 @@ const ForgotPassword: React.FC = () => {
         <p className="mb-4 text-white">
           Ingresa tu correo electrónico para enviarte un código de recuperación.
         </p>
+
+        {mensaje && (
+          <div className="alert alert-success text-center py-2" role="alert">
+            {mensaje}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit}>
           <div className="mb-3 text-start">
