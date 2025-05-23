@@ -20,7 +20,8 @@ export default function Navbar() {
             <li className="nav-item"><Link className="nav-link" to="/categories">Categorías</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/plataformas">Plataforma</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/offers">Ofertas especiales</Link></li>
-            
+            <li className="nav-item"><Link className="nav-link" to="/mejor-valorados">Mejor Valorados</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/masvendi">Mas vendidos</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/configuracion">Configuración</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/adminpag">Admin</Link></li>
           </ul>
