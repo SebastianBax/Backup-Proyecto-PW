@@ -1,4 +1,5 @@
 import React from "react";
+import '../paginas/style.css';
 import { useNavigate } from "react-router-dom";
 
 type Juego = {

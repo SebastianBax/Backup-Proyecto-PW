@@ -6,8 +6,8 @@ const Categories: React.FC = () => {
   const navigate = useNavigate();
 
   const categories = [
-    { name: 'Best Sellers', path: '/categoria/BestSellers' },
-    { name: 'Top Rated', path: '/categoria/TopRated' },
+    { name: 'Best Sellers', path: '/masvendi' },
+    { name: 'Top Rated', path: '/mejor-valorados' },
     { name: 'Free to Play', path: '/categoria/FreetoPlay' },
     { name: 'Multiplayer', path: '/categoria/Multiplayer' },
     { name: 'Early Acces', path: '/categoria/earlyAcces' },
@@ -22,11 +22,7 @@ const Categories: React.FC = () => {
         <div className="row">
           {categories.map((cat, idx) => ( 
             <div className="col-md-4 mb-4 d-flex justify-content-center" key={idx}>
-              <button
-                className="btn btn-primary w-100"
-                style={{ maxWidth: '250px' }}
-                onClick={() => navigate(cat.path)}
-              >
+              <button className="btn btn-primary w-100"style={{ maxWidth: '250px' }}onClick={() => navigate(cat.path)}>
                 {cat.name}
               </button>
             </div>
