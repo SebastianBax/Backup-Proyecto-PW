@@ -13,12 +13,15 @@ const NuevaContra: React.FC = () => {
     setMensaje('¡Contraseña reestablecida!');
     setTimeout(() => {
       navigate('/login');
-    }, 2000);
+    }, 10000);
   };
 
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="card p-4 shadow" style={{ maxWidth: 400, width: '100%', backgroundColor: '#1e1e1e' }}>
+        <div className="text-end">
+          <button onClick={() => navigate('/login')} className="btn btn-sm btn-light rounded-circle">←</button>
+        </div>
         <h2 className="fw-bold mb-3 text-white">Reestablece tu contraseña</h2>
         <p className="mb-4 text-white">
           Introduzca el código de uso único que se envió al correo verificado de la cuenta.
