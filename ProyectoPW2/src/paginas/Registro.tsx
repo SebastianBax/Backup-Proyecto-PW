@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -6,10 +6,14 @@ import '../paginas/style.css';
 
 const Registro: React.FC = () => {
   const navigate = useNavigate();
+  const [mensaje, setMensaje] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate('/login');
+    setMensaje('¡Usuario registrado exitosamente!');
+    setTimeout(() => {
+      navigate('/login');
+    }, 100000);
   };
 
   return (
@@ -20,6 +24,12 @@ const Registro: React.FC = () => {
         </div>
         <h2 className="text-center mb-3 fw-bold text-white">Crear cuenta</h2>
         <p className="text-center text-light mb-4">Explora el catálogo de juegos nuevos y fascinantes retros</p>
+
+        {mensaje && (
+          <div className="alert alert-success text-center py-2" role="alert">
+            {mensaje}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -50,7 +60,7 @@ const Registro: React.FC = () => {
           </div>
 
           <div className="d-grid">
-            <button type="submit"className="btn rounded-pill fw-bold"style={{ backgroundColor: '#6500ff', color: 'white' }}>
+            <button type="submit" className="btn rounded-pill fw-bold" style={{ backgroundColor: '#6500ff', color: 'white' }}>
               Continuar →
             </button>
           </div>
