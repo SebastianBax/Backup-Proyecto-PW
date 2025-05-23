@@ -56,6 +56,7 @@ const DetalleJuego: React.FC = () => {
         </div>
 
         <h2 className="text-xl font-semibold mb-2">Tráiler</h2>
+        <div className="d-flex justify-content-center">
         <div className="ratio ratio-16x9 mb-4" style={{ maxWidth: 700 }}>
           <iframe
             src={juego.trailer}
@@ -63,6 +64,7 @@ const DetalleJuego: React.FC = () => {
             allowFullScreen
             style={{ width: "100%", height: "100%" }}
           ></iframe>
+        </div>
         </div>
 
         {/* Área de reseñas */}

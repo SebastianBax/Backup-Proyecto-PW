@@ -28,7 +28,7 @@ const juegosDataInicial: JuegoDetalle[] = [
     descripcion: "Juego de construcción y supervivencia...",
     estrellas: 5,
     imagenes: ["/Minecraft-Logo.png"],
-    trailer: "",
+    trailer: "https://www.youtube.com/embed/Rla3FUlxJdE",
     resenas: [],
     precio: 20,
     oferta: true,
