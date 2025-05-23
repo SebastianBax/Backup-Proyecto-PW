@@ -1,28 +1,43 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 
 const AgregarDescuento = () => {
-
-  const [juegoSelec, setJuegoSelec] = useState('');
-  const [descuento, setDescuento] = useState('');
-
-  return <div className="container mt-5">
-      <h6></h6>
-      <form>
-        <div className="mb-3 col-md-4" >
+  return (
+    <div className="container mt-5">
+      <h3 className="mb-4">Aplicar Descuento</h3>
+      <form className="row g-3">
+        <div className="col-md-6">
           <label className="form-label">Nombre del juego</label>
-          <input type="text" className="form-control" placeholder="Minecraft"/>
+          <input
+            type="text"
+            className="form-control form-control-sm"
+            placeholder="Minecraft"
+          />
         </div>
 
-
-        <div className="mb-3 col-md-4">
-          <label className="form-label">Porcentaje de Descuento</label>
-          <input type="number" className="form-control" placeholder="15"/>
+        <div className="col-md-3">
+          <label className="form-label">Precio ($)</label>
+          <input
+            type="number"
+            className="form-control form-control-sm"
+            placeholder="Ej: 20"
+          />
         </div>
 
-        <button className="btn btn-success">Aplicar Descuento</button>
+        <div className="col-md-3">
+          <label className="form-label">% Descuento</label>
+          <input
+            type="number"
+            className="form-control form-control-sm"
+            placeholder="1-100"
+          />
+        </div>
+
+        <div className="col-12">
+          <button className="btn btn-success btn-sm">Aplicar Descuento</button>
+        </div>
       </form>
     </div>
-}
+  );
+};
 
-export default AgregarDescuento
+export default AgregarDescuento;
