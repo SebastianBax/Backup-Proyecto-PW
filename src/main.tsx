@@ -31,7 +31,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <GameProvider>
     <CarritoProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/frontend-pw">
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/tienda" element={<PaginaPrincipal />} />
