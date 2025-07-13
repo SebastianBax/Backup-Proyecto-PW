@@ -17,13 +17,13 @@ export default function PaginaPrincipal() {
       <div id="mainCarousel" className="carousel slide mt-4 container" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="/Minecraft_banner.png" className="d-block w-100" alt="Minecraft" />
+            <img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000000964/a28a81253e919298beab2295e39a56b7a5140ef15abdb56135655e5c221b2a3a" className="d-block w-100" alt="Minecraft" />
             <div className="carousel-caption">
               <button className="btn btn-acento">Detalles</button>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="/Rimworld_banner.jpg" className="d-block w-100" alt="Rimworld" />
+            <img src="https://cdn1.epicgames.com/spt-assets/f39371235a0f429d9d33b76a9bfa8916/rimworld-1hhrb.png" className="d-block w-100" alt="Rimworld" />
             <div className="carousel-caption">
               <button className="btn btn-acento">Detalles</button>
             </div>
