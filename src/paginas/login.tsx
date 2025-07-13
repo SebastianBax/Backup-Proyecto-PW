@@ -44,6 +44,9 @@ const Login: React.FC = () => {
             <input type="password" className="form-control rounded-pill" id="password" name="password" required />
           </div>
           {error && <div className="text-danger mb-2">{error}</div>}
+          <button type="button" onClick={() => navigate('/forgot')} className="btn btn-link text-light">
+          ¿Olvidaste tu contraseña?
+          </button>
           <div className="d-grid gap-2">
             <button type="submit" className="btn" style={{ backgroundColor: '#6500ff', color: 'white' }}>
               Iniciar Sesión
