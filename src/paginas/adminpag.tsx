@@ -25,6 +25,12 @@ const AdminPage = () => {
           Catálogo de juegos
         </button>
       </section>
+	  
+	  <section className="mb-5">
+          <button className="btn btn-success" onClick={() => navigate('/admin/noticias')}>
+            Administrar Noticias
+          </button>
+        </section>
     </div>
     </>
   );
